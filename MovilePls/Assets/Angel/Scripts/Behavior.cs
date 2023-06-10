@@ -8,6 +8,8 @@ public class Behavior : MonoBehaviour
     public Rigidbody2D rb;
     public float force;
     public float timer;
+    public float desTime = 4;
+    public int Value;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,9 +22,13 @@ public class Behavior : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer >= 1.8f)
+        if (timer >= desTime)
         {
             Destroy(gameObject);
         }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
     }
 }
