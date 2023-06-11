@@ -12,5 +12,8 @@ public class Proyectile : MonoBehaviour
         rb.AddForce(transform.up * force);
     }
 
-    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
+    }
 }
