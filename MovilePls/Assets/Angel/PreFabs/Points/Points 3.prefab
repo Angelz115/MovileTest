@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3316896627603602106}
   m_Layer: 0
   m_Name: Points 3
-  m_TagString: Untagged
+  m_TagString: Point
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,6 +139,7 @@ MonoBehaviour:
   target: {x: 0, y: 0}
   rb: {fileID: 0}
   force: 5
+  modifier: 1
   timer: 0
   desTime: 4
   Value: 3

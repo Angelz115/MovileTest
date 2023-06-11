@@ -6,6 +6,7 @@ public class Spawner : MonoBehaviour
 {
     public float timer;
     public float timeToSpawn = 2;
+    public Vector2 target;
 
     public List<GameObject> Positions;
     public List<GameObject> Enemy;
@@ -38,7 +39,7 @@ public class Spawner : MonoBehaviour
     {
         if (toSpawn.Count == 0)
         {
-            Debug.Log("Perdiste");
+            //Debug.Log("Perdiste");
             return;
         }
         
@@ -73,7 +74,7 @@ public class Spawner : MonoBehaviour
                     thisObject = Instantiate(toGenerate, Positions[Location[0]].transform.position, transform.rotation);
                     break;
             }
-            thisObject.GetComponent<Behavior>().target = new Vector2(0, 0);
+            thisObject.GetComponent<Behavior>().target = target;
             thisObject.GetComponent<Behavior>().force = force;
         }
         void RemoveFirst() 
