@@ -51,9 +51,11 @@ public class PlayerSkills : MonoBehaviour
         if (invincivilityCount <= 0)
             return;
 
+        if (invActive)
+            return;
+
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
         invActive = true;
-        Debug.Log("Invencible");
         invincivilityCount--;
         InviCountUI.text = invincivilityCount.ToString();
         
