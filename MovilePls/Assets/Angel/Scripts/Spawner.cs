@@ -18,10 +18,21 @@ public class Spawner : MonoBehaviour
 
     public bool emptyList;
     public float force = 10;
+
+    public int totalEnemies;
+    public int totalPoins;
     // Start is called before the first frame update
     void Start()
     {
-        
+        for (int i = 0; i < toSpawn.Count; i++)
+        {
+            if (toSpawn[i] == 0)
+                totalPoins++;
+            
+            if (toSpawn[i] == 1)          
+                totalEnemies++;
+            
+        }
     }
 
     // Update is called once per frame
