@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7904696762543356889
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7904696762543356895}
+  - component: {fileID: 7904696762543356894}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7904696762543356895
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7904696762543356889}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7904696762543356894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7904696762543356889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1b03c0daa9f68e4b80d19a40b11ec2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 0
+  timeToSpawn: 1
+  target: {x: 0, y: 0}
+  Positions:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  Enemy:
+  - {fileID: 2129643543746304052, guid: 583e3f64eef47d542ac3ac4a0a81890f, type: 3}
+  - {fileID: 2129643543746304052, guid: 5a8812d8f37cb6846bd52b803bad256a, type: 3}
+  - {fileID: 2129643543746304052, guid: 8a5e92ac268561045876782d6beaf6aa, type: 3}
+  - {fileID: 2129643543746304052, guid: e0bffc0fd486a0a48bad7462e509f38b, type: 3}
+  Point:
+  - {fileID: 2987652487535592336, guid: 2f17c543db6951643995da9d5c8bf738, type: 3}
+  - {fileID: 2987652487535592336, guid: 712ac503932934f42a173a9ebaf431f9, type: 3}
+  - {fileID: 2987652487535592336, guid: 40ad7fdeeb3e2d84d9f8ea6c8778769e, type: 3}
+  - {fileID: 2987652487535592336, guid: 3cd0882022582694e86e450dcbde6958, type: 3}
+  ObjectValue: 00000000010000000200000003000000000000000100000002000000030000000200000003000000
+  ObjectValueInt: 0
+  toSpawn: 00000000010000000000000001000000000000000100000000000000010000000000000001000000
+  toSpawnInt: 0
+  Location: 00000000010000000200000003000000000000000100000002000000030000000200000003000000
+  currentLocation: 0
+  emptyList: 0
+  force: 20
+  totalEnemies: 0
+  totalPoins: 0
+  totalValPoints: 0
