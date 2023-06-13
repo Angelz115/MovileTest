@@ -13,15 +13,34 @@ public class Spawner : MonoBehaviour
     public List<GameObject> Point;
 
     public List<int> ObjectValue;
+    public int ObjectValueInt;
     public List<int> toSpawn;
-    public List<int> Location;
+    public int toSpawnInt;
 
+    public List<int> Location;
+    public int currentLocation;
     public bool emptyList;
     public float force = 10;
+
+    public int totalEnemies;
+    public int totalPoins;
+    public int totalValPoints;
     // Start is called before the first frame update
     void Start()
     {
-        
+        for (int i = 0; i < toSpawn.Count; i++)
+        {
+            if (toSpawn[i] == 0) 
+            { 
+                totalPoins++;
+                //totalValPoints += ObjectValue[i] + 1;
+            
+            }
+            
+            if (toSpawn[i] == 1)          
+                totalEnemies++;
+            
+        }
     }
 
     // Update is called once per frame
@@ -31,11 +50,67 @@ public class Spawner : MonoBehaviour
         if (timer >= timeToSpawn)
         {
             timer = 0;
-            createObject();
+            createObject2();
+            //createObject();
             
         }
     }
-    void createObject() 
+    void createObject2() 
+    {
+        if (toSpawn.Count == toSpawnInt)
+        {
+            Debug.Log("termino");
+            return;
+        }
+
+        ObjectValueInt = ObjectValue[toSpawnInt];
+        currentLocation = Location[toSpawnInt];
+        if (toSpawn[toSpawnInt] == 0)                       //si el valor en la lista es 0 crea puntos
+        {
+            Debug.Log(ObjectValueInt + " - " + currentLocation);
+            InstaObj(Point[ObjectValueInt]);
+            //return;
+        }
+        if (toSpawn[toSpawnInt] == 1)                       //si el valor en la lista es 1 crea enemigo
+        {
+            Debug.Log(ObjectValueInt + " - " + currentLocation);
+            InstaObj(Enemy[ObjectValueInt]);
+            //return;
+        }
+
+        toSpawnInt++;
+        void InstaObj(GameObject whatTo)
+        {
+            GameObject thisGM;
+            
+            switch (ObjectValue[toSpawnInt])
+            {
+                case 3:
+                    thisGM = Instantiate(whatTo, Positions[currentLocation].transform.position, transform.rotation);
+                    //Debug.Log("Se creo el objeto: " + toSpawn[toSpawnInt] + " con valor: " + ObjectValue[toSpawnInt] + " en la posicion: " + Location[toSpawnInt]);
+                    break;
+                case 2:
+                    thisGM = Instantiate(whatTo, Positions[currentLocation].transform.position, transform.rotation);
+                    //Debug.Log("Se creo el objeto: " + toSpawn[toSpawnInt] + " con valor: " + ObjectValue[toSpawnInt] + " en la posicion: " + Location[toSpawnInt]);
+                    break;
+                case 1:
+                    thisGM = Instantiate(whatTo, Positions[currentLocation].transform.position, transform.rotation);
+                    //Debug.Log("Se creo el objeto: " + toSpawn[toSpawnInt] + " con valor: " + ObjectValue[toSpawnInt] + " en la posicion: " + Location[toSpawnInt]);
+                    break;
+                default:
+                    thisGM = Instantiate(whatTo, Positions[currentLocation].transform.position, transform.rotation);
+                    //Debug.Log("Se creo el objeto: " + toSpawn[toSpawnInt] + " con valor: " + ObjectValue[toSpawnInt] + " en la posicion: " + Location[toSpawnInt]);
+                    break;
+            }
+            thisGM.GetComponent<Behavior>().target = target;
+            thisGM.GetComponent<Behavior>().force = force; 
+        }
+
+
+        
+    }
+    /*
+    void createObject() //guardar el codigo porsiacaso
     {
         if (toSpawn.Count == 0)
         {
@@ -51,6 +126,7 @@ public class Spawner : MonoBehaviour
         {                                           //si es 1 es basura 
             InstObject(Enemy[ObjectValue[0]]);
         }
+        
         RemoveFirst();
 
         void InstObject(GameObject toGenerate) 
@@ -85,5 +161,7 @@ public class Spawner : MonoBehaviour
             Location.RemoveAt(0);
         }
         
+        
     }
+    */
 }
