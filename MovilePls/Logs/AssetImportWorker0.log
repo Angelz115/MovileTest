@@ -210,3 +210,51 @@ Received Import Request.
   path: Assets/Cristobal/Assets/Sprites/pxArt (18).png
   artifactKey: Guid(f59012e3dbc9430459e70040f7841b38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Cristobal/Assets/Sprites/pxArt (18).png using Guid(f59012e3dbc9430459e70040f7841b38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78ec51f328aec65a7247c27ee8500fe7') in 0.036911 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 293.822632 seconds.
+  path: Assets/Cristobal/Fonts
+  artifactKey: Guid(1d12996eb9012eb42ba32a12c9e2dde9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cristobal/Fonts using Guid(1d12996eb9012eb42ba32a12c9e2dde9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6fb3d834d887a7e1ac51c1fc65f792db') in 0.007838 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 13.022302 seconds.
+  path: Assets/Cristobal/Fonts/Fipps-Regular.otf
+  artifactKey: Guid(ed61b88906867ae4897face87361ee24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cristobal/Fonts/Fipps-Regular.otf using Guid(ed61b88906867ae4897face87361ee24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c681ea9005b504f015b303f80b41b87f') in 0.052542 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 28.263762 seconds.
+  path: Assets/Cristobal/Fonts/Fipps-Regular SDF.asset
+  artifactKey: Guid(c57acd8984468d24fae951bab4112328) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cristobal/Fonts/Fipps-Regular SDF.asset using Guid(c57acd8984468d24fae951bab4112328) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7473d2a2458721a0e4d751763fccb940') in 0.035322 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 196.308189 seconds.
+  path: Assets/Cristobal/Fonts/Fipps-Regular SDF.asset
+  artifactKey: Guid(c57acd8984468d24fae951bab4112328) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cristobal/Fonts/Fipps-Regular SDF.asset using Guid(c57acd8984468d24fae951bab4112328) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e860805bf7fccf6ad01ebbda28498f8') in 0.040285 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.278918 seconds.
+  path: Assets/Cristobal/PantallaInicio.unity
+  artifactKey: Guid(4403d20735fd4474bad20f052fa47fdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cristobal/PantallaInicio.unity using Guid(4403d20735fd4474bad20f052fa47fdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b60f27ec3be3d18c38c6fd4ab13ddd8d') in 0.007769 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.805522 seconds.
+  path: Assets/Cristobal/SelectorNivel.unity
+  artifactKey: Guid(ef026c781ee64ae4ea089c7152c5a94a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cristobal/SelectorNivel.unity using Guid(ef026c781ee64ae4ea089c7152c5a94a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '113a289e6124f8a6ae18a5bfe0f9a7bb') in 0.009420 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 196.104390 seconds.
+  path: Assets/Cristobal/Fonts/Fipps-Regular SDF.asset
+  artifactKey: Guid(c57acd8984468d24fae951bab4112328) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cristobal/Fonts/Fipps-Regular SDF.asset using Guid(c57acd8984468d24fae951bab4112328) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ffd38e73ef5dd2a2ce9ca64249275bf') in 0.034373 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.137877 seconds.
+  path: Assets/Cristobal/Level 1.unity
+  artifactKey: Guid(d0b20b5559b857543be828cf684eeaf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cristobal/Level 1.unity using Guid(d0b20b5559b857543be828cf684eeaf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '172b8fc03fa35f62e08604a67ce6e98d') in 0.010470 seconds 
