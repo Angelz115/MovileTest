@@ -67,13 +67,13 @@ public class Spawner : MonoBehaviour
         currentLocation = Location[toSpawnInt];
         if (toSpawn[toSpawnInt] == 0)                       //si el valor en la lista es 0 crea puntos
         {
-            Debug.Log(ObjectValueInt + " - " + currentLocation);
+            //Debug.Log(ObjectValueInt + " - " + currentLocation);
             InstaObj(Point[ObjectValueInt]);
             //return;
         }
         if (toSpawn[toSpawnInt] == 1)                       //si el valor en la lista es 1 crea enemigo
         {
-            Debug.Log(ObjectValueInt + " - " + currentLocation);
+            //Debug.Log(ObjectValueInt + " - " + currentLocation);
             InstaObj(Enemy[ObjectValueInt]);
             //return;
         }
@@ -103,7 +103,8 @@ public class Spawner : MonoBehaviour
                     break;
             }
             thisGM.GetComponent<Behavior>().target = target;
-            thisGM.GetComponent<Behavior>().force = force; 
+            thisGM.GetComponent<Behavior>().force = force;
+            thisGM.GetComponent<Behavior>().identity = toSpawn[toSpawnInt];
         }
 
 

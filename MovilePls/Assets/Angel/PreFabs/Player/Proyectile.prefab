@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8025765476141338652}
   m_Layer: 0
   m_Name: Proyectile
-  m_TagString: Untagged
+  m_TagString: Proyectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,7 +121,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2293174455107869480}
-  force: 100
+  force: 200
+  player: {fileID: 0}
 --- !u!61 &8025765476141338652
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -8,6 +8,9 @@ public class PlayerPoints : MonoBehaviour
     public int points = 0;
     public int currentCombo;
     public int maxCombo;
+
+    public int enemyHits;
+
     public TextMeshProUGUI pointsUI;
     public TextMeshProUGUI comboUI;
 
@@ -16,6 +19,7 @@ public class PlayerPoints : MonoBehaviour
         pointsUI.text = points.ToString();
         comboUI.text = "";
     }
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject coll = collision.gameObject;
