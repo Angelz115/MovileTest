@@ -23,6 +23,11 @@ public class Behavior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        GameObject gm = collision.gameObject;
+        if (gm.CompareTag("ShieldSK") && identity == 0)
+        {
+            return;
+        }
         Destroy(gameObject);
     }
     private void OnCollisionEnter2D(Collision2D collision)

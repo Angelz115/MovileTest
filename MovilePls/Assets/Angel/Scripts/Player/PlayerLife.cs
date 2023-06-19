@@ -15,7 +15,7 @@ public class PlayerLife : MonoBehaviour
     }
     private void Update()
     {
-        if (lives >= 0)
+        if (lives <= 0)
         {
             isDead = true;
         }

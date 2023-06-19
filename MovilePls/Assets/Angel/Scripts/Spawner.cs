@@ -24,32 +24,34 @@ public class Spawner : MonoBehaviour
     public float force = 10;
 
     public int totalEnemies;
-    public int totalPoins;
+    public int totalPoints;
     public int totalValPoints;
-    public GameManager manager;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         for (int i = 0; i < toSpawn.Count; i++)
         {
             if (toSpawn[i] == 0) 
             { 
-                totalPoins++;
-                //totalValPoints += ObjectValue[i] + 1;
-            
+                totalPoints++;
+                totalValPoints += ObjectValue[i] + 1;
             }
-            
-            if (toSpawn[i] == 1)          
+                
+            if (toSpawn[i] == 1)
                 totalEnemies++;
-            
+
         }
+        Debug.Log(totalValPoints);
     }
+    
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (emptyList)
+        {
+            return;
+        }
         timer += Time.deltaTime;
         if (timer >= timeToSpawn)
         {
@@ -60,11 +62,13 @@ public class Spawner : MonoBehaviour
     }
     void createObject2() 
     {
+
         if (toSpawn.Count == toSpawnInt)
         {
             emptyList = true;
             Debug.Log(emptyList);
             return;
+
         }
 
         ObjectValueInt = ObjectValue[toSpawnInt];

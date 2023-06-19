@@ -10,30 +10,37 @@ public class PlayerSkills : MonoBehaviour
     public Transform origin;
     public GameObject Shield;
     public int proyectileCount;
-    public int invincivilityCount;
+    public int skillShieldCount;
     public TextMeshProUGUI ProyCountUI;
-    public TextMeshProUGUI InviCountUI;
+    public TextMeshProUGUI skShieldCountUI;
+
+    public GameObject skShield;
+    public GameObject thisSkShield;
 
     public float timer;
-    public float MaxInv;
-    public bool invActive;
+    public float MaxShield;
+    public bool shieldActive;
     private void Start()
     {
         ProyCountUI.text = proyectileCount.ToString();
-        InviCountUI.text = invincivilityCount.ToString();
+        skShieldCountUI.text = skillShieldCount.ToString();
     }
     private void Update()
     {
-        if (invActive)
-        {
+        if (shieldActive)
             timer += Time.deltaTime;
-            Debug.Log("Invencible");
-        }
-        if (timer >= MaxInv)
+            
+        
+        if (timer >= MaxShield)
         {
-            gameObject.GetComponent<BoxCollider2D>().enabled = true;
+
+            Destroy(thisSkShield);
             timer = 0;
-            invActive = false;
+            shieldActive = false;
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Proyectile();
         }
         
     }
@@ -41,23 +48,25 @@ public class PlayerSkills : MonoBehaviour
     {
         if (proyectileCount <=0)
             return;
-        //Shield.gameObject.SetActive(false);
-        GameObject proyectile = Instantiate(ProyectileGM, origin.position, transform.rotation);
+
+        Instantiate(ProyectileGM, origin.position, transform.rotation);
         proyectileCount--;
         ProyCountUI.text = proyectileCount.ToString();
     }
-    public void Invincibility() 
+    public void SkShield() 
     {
-        if (invincivilityCount <= 0)
+        if (skillShieldCount <= 0)
             return;
 
-        if (invActive)
+        if (shieldActive)
             return;
 
-        gameObject.GetComponent<BoxCollider2D>().enabled = false;
-        invActive = true;
-        invincivilityCount--;
-        InviCountUI.text = invincivilityCount.ToString();
+        Vector3 ShieldPosSK = new Vector3(0, 0.5f, 0);
+        thisSkShield = Instantiate(skShield,ShieldPosSK,transform.rotation);
+        
+        shieldActive = true;
+        skillShieldCount--;
+        skShieldCountUI.text = skillShieldCount.ToString();
         
     }
 }

@@ -7,7 +7,7 @@ public class Pause : MonoBehaviour
 {
     public static bool isPaused = false;
     public GameObject pauseMenuUI;
-
+    public GameObject manager;
     
     public void Paused() 
     {
@@ -35,5 +35,21 @@ public class Pause : MonoBehaviour
         Time.timeScale = 1f;
         isPaused = false;
         SceneManager.LoadScene("SelectorNivel");
+    }
+    public void toLevel2() 
+    { 
+        
+        if (manager.GetComponent<GameManager>().finalScore >= manager.GetComponent<GameManager>().toNext)
+        {
+            SceneManager.LoadScene("Level2");
+        }
+        
+    }
+    public void toLevel3() 
+    {
+        if (manager.GetComponent<GameManager>().finalScore >= manager.GetComponent<GameManager>().toNext)
+        {
+            SceneManager.LoadScene("Level2");
+        }
     }
 }
