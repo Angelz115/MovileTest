@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     public bool doesPass;
     private void Start()
     {
-        PlayerPrefs.SetInt("FinalScore2", 1);
+        PlayerPrefs.SetInt("FinalScore1", 1);
     }
     void Update()
     {
