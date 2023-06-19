@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public PlayerLife playerLife;
     public PlayerPoints playerPoints;
     public PlayerSkills PlayerSkills;
+    public Pause pause;
     public Spawner spawner;
     public bool gameEnded;
 
@@ -15,14 +16,18 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI finishText;
     public List<TextMeshProUGUI> Values;
+    public TextMeshProUGUI showText;
     public float timer;
     public float toShow;
 
     public int finalScore;
     public int toNext;
     public int scene;
-    
-    
+    public bool doesPass;
+    private void Start()
+    {
+        PlayerPrefs.SetInt("FinalScore2", 1);
+    }
     void Update()
     {
         if (playerLife.isDead || spawner.emptyList)
@@ -39,6 +44,10 @@ public class GameManager : MonoBehaviour
             if (spawner.emptyList)
                 PopUp("Victoria");
 
+        }
+        if (pause.showText)
+        {
+            showText.text = "Puntuacion insuficiente, nesecita un minimo de " + toNext;
         }
         
     }
@@ -86,6 +95,8 @@ public class GameManager : MonoBehaviour
         }
 
         //Debug.Log(PlayerPrefs.GetInt("FinalScore1"));
+        if (finalScore >= toNext)
+            doesPass = true;
         
     }
 

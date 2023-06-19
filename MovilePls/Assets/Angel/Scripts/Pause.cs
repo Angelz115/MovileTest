@@ -8,6 +8,9 @@ public class Pause : MonoBehaviour
     public static bool isPaused = false;
     public GameObject pauseMenuUI;
     public GameObject manager;
+    public GameObject textInScreen;
+    public bool showText;
+    
     
     public void Paused() 
     {
@@ -37,11 +40,15 @@ public class Pause : MonoBehaviour
         SceneManager.LoadScene("SelectorNivel");
     }
     public void toLevel2() 
-    { 
-        
-        if (manager.GetComponent<GameManager>().finalScore >= manager.GetComponent<GameManager>().toNext)
-        {
+    {
+
+        if (manager.GetComponent<GameManager>().doesPass)
             SceneManager.LoadScene("Level2");
+        else
+        {
+            textInScreen.SetActive(true);
+            showText = true;
+            
         }
         
     }
