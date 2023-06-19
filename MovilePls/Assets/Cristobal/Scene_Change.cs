@@ -12,6 +12,7 @@ public class Scene_Change : MonoBehaviour
 
     public void lvl1()
     {
+
         SceneManager.LoadScene("Level1");
     }
     public void lvl2() 

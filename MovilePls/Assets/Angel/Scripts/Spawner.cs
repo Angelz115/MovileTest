@@ -19,12 +19,15 @@ public class Spawner : MonoBehaviour
 
     public List<int> Location;
     public int currentLocation;
+
     public bool emptyList;
     public float force = 10;
 
     public int totalEnemies;
     public int totalPoins;
     public int totalValPoints;
+    public GameManager manager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,20 +49,21 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         timer += Time.deltaTime;
         if (timer >= timeToSpawn)
         {
             timer = 0;
             createObject2();
             //createObject();
-            
         }
     }
     void createObject2() 
     {
         if (toSpawn.Count == toSpawnInt)
         {
-            Debug.Log("termino");
+            emptyList = true;
+            Debug.Log(emptyList);
             return;
         }
 
