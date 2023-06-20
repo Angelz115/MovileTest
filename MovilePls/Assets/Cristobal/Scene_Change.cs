@@ -10,6 +10,11 @@ public class Scene_Change : MonoBehaviour
         SceneManager.LoadScene("SelectorNivel");
     }
 
+    public void toInicio()
+    {
+        SceneManager.LoadScene("PantallaInicio");
+    }
+
     public void lvl1()
     {
         
