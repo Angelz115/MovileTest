@@ -10,9 +10,19 @@ public class Pause : MonoBehaviour
     public GameObject manager;
     public GameObject textInScreen;
     public bool showText;
-    public Scene thisLevel;
-    
-    
+    public float timer,stay;
+
+    private void Update()
+    {
+        if (showText)
+        {
+            timer += Time.deltaTime;
+        }
+        if (timer >= stay)
+        {
+            textInScreen.SetActive(false);
+        }
+    }
     public void Paused() 
     {
         pauseMenuUI.SetActive(true);
@@ -59,7 +69,10 @@ public class Pause : MonoBehaviour
     }
     public void toLevel2() 
     {
-
+        if (showText)
+        {
+            return;
+        }
         if (manager.GetComponent<GameManager>().doesPass)
             SceneManager.LoadScene("Level2");
         else
@@ -72,6 +85,10 @@ public class Pause : MonoBehaviour
     }
     public void toLevel3() 
     {
+        if (showText)
+        {
+            return;
+        }
         if (manager.GetComponent<GameManager>().doesPass)
             SceneManager.LoadScene("Level3");
         else
@@ -81,4 +98,5 @@ public class Pause : MonoBehaviour
 
         }
     }
+    
 }
