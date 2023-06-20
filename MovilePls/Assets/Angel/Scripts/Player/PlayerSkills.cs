@@ -63,6 +63,7 @@ public class PlayerSkills : MonoBehaviour
 
         Vector3 ShieldPosSK = new Vector3(0, 0.5f, 0);
         thisSkShield = Instantiate(skShield,ShieldPosSK,transform.rotation);
+        thisSkShield.transform.parent = gameObject.transform;
         
         shieldActive = true;
         skillShieldCount--;

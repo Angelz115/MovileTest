@@ -5,7 +5,7 @@ using System;
 
 public class Lives : MonoBehaviour
 {
-    DateTime currentDate;
+    
 
     // Start is called before the first frame update
     void Start()

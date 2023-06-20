@@ -159,7 +159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -245, y: -118.91}
+  m_AnchoredPosition: {x: -245, y: -120}
   m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &104625348
@@ -1378,7 +1378,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &466034057
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1539,14 +1539,6 @@ PrefabInstance:
     - target: {fileID: 2161959809986222750, guid: 3a68fdab001e5604e821ff8171104c30, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2161959810675708852, guid: 3a68fdab001e5604e821ff8171104c30, type: 3}
-      propertyPath: m_fontSize
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 2161959810675708852, guid: 3a68fdab001e5604e821ff8171104c30, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a68fdab001e5604e821ff8171104c30, type: 3}
@@ -1945,7 +1937,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &946887128
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2779,7 +2771,7 @@ MonoBehaviour:
   - {fileID: 1141448688}
   - {fileID: 434081445}
   - {fileID: 1625851011}
-  showText: {fileID: 1347490746}
+  displayText: {fileID: 1347490746}
   timer: 0
   toShow: 2.3
   finalScore: 0
@@ -2816,6 +2808,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ab78d603b17f5445b3d0d6772d011c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showText: {fileID: 0}
+  textGM: {fileID: 0}
+  toLvl2: 0
+  toLvl3: 0
 --- !u!4 &1397498760
 Transform:
   m_ObjectHideFlags: 0
@@ -2847,8 +2843,6 @@ MonoBehaviour:
   manager: {fileID: 1389500735}
   textInScreen: {fileID: 1422176169}
   showText: 0
-  thisLevel:
-    m_Handle: 0
 --- !u!1 &1410482188
 GameObject:
   m_ObjectHideFlags: 0
@@ -3300,7 +3294,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -118.91}
+  m_AnchoredPosition: {x: 0, y: -120}
   m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1488345587
@@ -3433,7 +3427,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 245, y: -119.91}
+  m_AnchoredPosition: {x: 245, y: -120}
   m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1523422460
@@ -3482,7 +3476,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1397498761}
         m_TargetAssemblyTypeName: Pause, Assembly-CSharp
-        m_MethodName: toLevel2
+        m_MethodName: toLevel3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4501,6 +4495,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 818019574638206997, guid: 30033db133b1a0740b5e439d299e40f4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30033db133b1a0740b5e439d299e40f4, type: 3}
 --- !u!1001 &7904696763514113354
@@ -4520,7 +4518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7904696762543356894, guid: 6125a401e71e20a40adf4720161fcdce, type: 3}
       propertyPath: force
-      value: 25
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7904696762543356894, guid: 6125a401e71e20a40adf4720161fcdce, type: 3}
       propertyPath: toSpawn.Array.size

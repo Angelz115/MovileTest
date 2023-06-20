@@ -159,7 +159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -160, y: -120}
+  m_AnchoredPosition: {x: -175, y: -120}
   m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &104625348
@@ -1540,14 +1540,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2161959810675708852, guid: 3a68fdab001e5604e821ff8171104c30, type: 3}
-      propertyPath: m_fontSize
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 2161959810675708852, guid: 3a68fdab001e5604e821ff8171104c30, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 35
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a68fdab001e5604e821ff8171104c30, type: 3}
 --- !u!1 &568225713
@@ -2778,12 +2770,12 @@ MonoBehaviour:
   - {fileID: 1141448688}
   - {fileID: 434081445}
   - {fileID: 1625851011}
-  showText: {fileID: 1347490746}
+  displayText: {fileID: 1347490746}
   timer: 0
   toShow: 2.3
   finalScore: 0
-  toNext: 15
-  scene: 1
+  toNext: 35
+  scene: 3
   doesPass: 0
 --- !u!1 &1397498758
 GameObject:
@@ -2815,6 +2807,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ab78d603b17f5445b3d0d6772d011c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showText: {fileID: 0}
+  textGM: {fileID: 0}
+  toLvl2: 0
+  toLvl3: 0
 --- !u!4 &1397498760
 Transform:
   m_ObjectHideFlags: 0
@@ -2846,8 +2842,6 @@ MonoBehaviour:
   manager: {fileID: 1389500735}
   textInScreen: {fileID: 1422176169}
   showText: 0
-  timer: 0
-  stay: 0
 --- !u!1 &1410482188
 GameObject:
   m_ObjectHideFlags: 0
@@ -3299,7 +3293,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 160, y: -120}
+  m_AnchoredPosition: {x: 175, y: -120}
   m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1488345587
@@ -3348,7 +3342,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1397498761}
         m_TargetAssemblyTypeName: Pause, Assembly-CSharp
-        m_MethodName: Restart
+        m_MethodName: RestartLvl3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4386,7 +4380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7904696762543356894, guid: 6125a401e71e20a40adf4720161fcdce, type: 3}
       propertyPath: force
-      value: 30
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7904696762543356894, guid: 6125a401e71e20a40adf4720161fcdce, type: 3}
       propertyPath: toSpawn.Array.size

@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 
     public TextMeshProUGUI finishText;
     public List<TextMeshProUGUI> Values;
-    public TextMeshProUGUI showText;
+    public TextMeshProUGUI displayText;
     public float timer;
     public float toShow;
 
@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
         }
         if (pause.showText)
         {
-            showText.text = "Puntuacion insuficiente, nesecita un minimo de " + toNext;
+            displayText.text = "Puntuacion insuficiente, nesecita un minimo de " + toNext + " puntos";
         }
         
     }
