@@ -10,6 +10,7 @@ public class Pause : MonoBehaviour
     public GameObject manager;
     public GameObject textInScreen;
     public bool showText;
+    public Scene thisLevel;
     
     
     public void Paused() 
@@ -25,12 +26,29 @@ public class Pause : MonoBehaviour
         Time.timeScale = 1f;
         isPaused = false;
     }
-    public void Restart()
+    public void RestartLvl1()
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
         SceneManager.LoadScene("Level1");
+        
+    }
+    public void RestartLvl2()
+    {
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        isPaused = false;
+        SceneManager.LoadScene("Level2");
+
+    }
+    public void RestartLvl3()
+    {
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        isPaused = false;
+        SceneManager.LoadScene("Level3");
+
     }
     public void mainMenu() 
     {
@@ -54,9 +72,13 @@ public class Pause : MonoBehaviour
     }
     public void toLevel3() 
     {
-        if (manager.GetComponent<GameManager>().finalScore >= manager.GetComponent<GameManager>().toNext)
+        if (manager.GetComponent<GameManager>().doesPass)
+            SceneManager.LoadScene("Level3");
+        else
         {
-            SceneManager.LoadScene("Level2");
+            textInScreen.SetActive(true);
+            showText = true;
+
         }
     }
 }

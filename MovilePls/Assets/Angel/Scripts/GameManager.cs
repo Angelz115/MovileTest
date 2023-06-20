@@ -24,9 +24,10 @@ public class GameManager : MonoBehaviour
     public int toNext;
     public int scene;
     public bool doesPass;
+    
     private void Start()
     {
-        PlayerPrefs.SetInt("FinalScore1", 1);
+        //PlayerPrefs.SetInt("FinalScore1", 1);
     }
     void Update()
     {
