@@ -423,3 +423,9 @@ Received Import Request.
   path: Assets/Assets externos/Joystick Pack/Examples/Player.mat
   artifactKey: Guid(59e4faf24927edf4a82f463ad16f1c37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/Assets externos/Joystick Pack/Examples/Player.mat using Guid(59e4faf24927edf4a82f463ad16f1c37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc21b6b7521abb29a396be86d53082f8') in 0.180353 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 362.794009 seconds.
+  path: Assets/Cristobal/Scenes/Level2.unity
+  artifactKey: Guid(735421184ad9f6e4994a59bf4189556a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cristobal/Scenes/Level2.unity using Guid(735421184ad9f6e4994a59bf4189556a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6f6167e5d361dcea4848783e59cc479') in 0.006979 seconds 
