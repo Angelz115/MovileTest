@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Cristobal/Scenes/Level1.unity
     guid: d0b20b5559b857543be828cf684eeaf3
+  - enabled: 1
+    path: Assets/Cristobal/Scenes/Level2.unity
+    guid: 735421184ad9f6e4994a59bf4189556a
+  - enabled: 1
+    path: Assets/Cristobal/Scenes/Level3.unity
+    guid: 77f2e3702df5ead43aa2a198d7df8108
   m_configObjects: {}
