@@ -26,6 +26,7 @@ public class Spawner : MonoBehaviour
     public int totalEnemies;
     public int totalPoints;
     public int totalValPoints;
+    public PlayerLife playerLife;
 
     private void Awake()
     {
@@ -48,6 +49,10 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (playerLife.isDead)
+        {
+            return;
+        }
         if (emptyList)
         {
             return;

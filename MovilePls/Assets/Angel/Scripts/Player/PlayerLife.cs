@@ -18,6 +18,7 @@ public class PlayerLife : MonoBehaviour
         if (lives <= 0)
         {
             isDead = true;
+            gameObject.GetComponent<BoxCollider2D>().enabled = false;
         }
     }
 

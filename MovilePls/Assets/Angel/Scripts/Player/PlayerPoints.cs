@@ -14,6 +14,7 @@ public class PlayerPoints : MonoBehaviour
     public TextMeshProUGUI pointsUI;
     public TextMeshProUGUI comboUI;
 
+
     private void Start()
     {
         pointsUI.text = points.ToString();
@@ -22,6 +23,7 @@ public class PlayerPoints : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        
         GameObject coll = collision.gameObject;
 
         if (coll.CompareTag("Point"))
