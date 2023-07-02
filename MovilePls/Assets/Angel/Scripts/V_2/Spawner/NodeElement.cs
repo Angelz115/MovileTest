@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Entity {Point, Element}
+//public enum Entity {Point, Element}
 public class NodeElement : MonoBehaviour
 {
     public Entity entity;

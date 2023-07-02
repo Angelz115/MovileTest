@@ -2,24 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnerV2 : MonoBehaviour
+public class EndlessSpawner : MonoBehaviour
 {
-    //public List<NodeElement> Elements = new List<NodeElement>();
-    public StructElemnt StructElemnt;
     public List<GameObject> Asteroids = new List<GameObject>();
     public List<GameObject> Points = new List<GameObject>();
-    public List<StructElemnt.StructElementI> Elements = new List<StructElemnt.StructElementI>();
+    public List<Transform> positions = new List<Transform>();
+    public GameObject baseEntity;
     public GameObject currentEntity;
-    public int toSpawn;
+    public Vector2 playerPosition;
 
     public Entity thisEntity;
-    public Vector2 thisPosition;
-    public Vector2 thisTarget;
+    public Transform thisPosition;
+    public Vector2 target;
     public int thisValue;
+
 
     public int pointRepetition;
     public int asteroidRepetition;
     public int maxRepetition;
+
+    public int lastValue;
+    public int valueCount;
+
+    public int lastPos;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,40 +36,67 @@ public class SpawnerV2 : MonoBehaviour
     {
         
     }
-    public void createObject()
+    
+    void createObject() 
     {
-
         manageValues();
-
-
+        currentEntity = Instantiate(baseEntity, thisPosition.position, transform.rotation);
+        
     }
+
     public void manageValues()
     {
-        //decidir la entidad del elemento
+        //asignar al elemento su entidad 
+
         int entity = Random.Range(0, 2);
         if (entity == 0)
         {
-
             thisEntity = Entity.Point;
             pointRepetition++;
+
             if (pointRepetition == maxRepetition)
             {
                 thisEntity = Entity.Element;
                 pointRepetition = 0;
+
             }
         }
         else if (entity == 1)
         {
-
             thisEntity = Entity.Element;
             asteroidRepetition++;
+
             if (asteroidRepetition == maxRepetition)
             {
                 thisEntity = Entity.Element;
                 asteroidRepetition = 0;
+
             }
         }
 
+        //asignar al elemento su valor
 
+        thisValue = Random.Range(0, 5);
+        if (lastValue == thisValue)
+        {
+            valueCount++;
+            if (valueCount >= 3)
+                thisValue = Random.Range(0, 5);
+        }
+        else
+            valueCount = 0;
+
+        lastValue = thisValue;
+
+        //asignar al elemento su posicion
+        int choosePos = Random.Range(0, 5);
+
+        if (lastPos == choosePos)
+        {
+            choosePos = Random.Range(0, 5);
+        }
+        thisPosition = positions[choosePos];
+
+        target = playerPosition;
     }
 }
