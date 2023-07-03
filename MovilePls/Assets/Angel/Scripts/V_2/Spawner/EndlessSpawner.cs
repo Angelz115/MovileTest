@@ -11,12 +11,12 @@ public class EndlessSpawner : MonoBehaviour
     public GameObject currentEntity;
     public Vector2 playerPosition;
 
-    public Entity thisEntity;
+    
     public Transform thisPosition;
     public Vector2 target;
     public int thisValue;
 
-
+    public int entity;
     public int pointRepetition;
     public int asteroidRepetition;
     public int maxRepetition;
@@ -25,6 +25,10 @@ public class EndlessSpawner : MonoBehaviour
     public int valueCount;
 
     public int lastPos;
+    public int choosePos;
+
+    public float timer;
+    public float maxTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,13 +38,26 @@ public class EndlessSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        timer += Time.deltaTime;
+        if (timer >= maxTime)
+        {
+            createObject();
+            timer = 0;
+        }
     }
     
     void createObject() 
     {
         manageValues();
-        currentEntity = Instantiate(baseEntity, thisPosition.position, transform.rotation);
+        if (entity == 0)
+        {
+            currentEntity = Instantiate(Points[thisValue], thisPosition.position, transform.rotation);
+        }
+        else
+        {
+            currentEntity = Instantiate(Asteroids[thisValue], thisPosition.position, transform.rotation);
+        }
+        //currentEntity
         
     }
 
@@ -48,27 +65,27 @@ public class EndlessSpawner : MonoBehaviour
     {
         //asignar al elemento su entidad 
 
-        int entity = Random.Range(0, 2);
+        entity = Random.Range(0, 2);
         if (entity == 0)
         {
-            thisEntity = Entity.Point;
+            
             pointRepetition++;
 
             if (pointRepetition == maxRepetition)
             {
-                thisEntity = Entity.Element;
+                entity = 1;
                 pointRepetition = 0;
 
             }
         }
         else if (entity == 1)
         {
-            thisEntity = Entity.Element;
+            
             asteroidRepetition++;
 
             if (asteroidRepetition == maxRepetition)
             {
-                thisEntity = Entity.Element;
+                entity = 0;
                 asteroidRepetition = 0;
 
             }
@@ -76,12 +93,12 @@ public class EndlessSpawner : MonoBehaviour
 
         //asignar al elemento su valor
 
-        thisValue = Random.Range(0, 5);
+        thisValue = Random.Range(0, 4);
         if (lastValue == thisValue)
         {
             valueCount++;
             if (valueCount >= 3)
-                thisValue = Random.Range(0, 5);
+                thisValue = Random.Range(0, 4);
         }
         else
             valueCount = 0;
@@ -89,11 +106,11 @@ public class EndlessSpawner : MonoBehaviour
         lastValue = thisValue;
 
         //asignar al elemento su posicion
-        int choosePos = Random.Range(0, 5);
+        choosePos = Random.Range(0, 4);
 
         if (lastPos == choosePos)
         {
-            choosePos = Random.Range(0, 5);
+            choosePos = Random.Range(0, 4);
         }
         thisPosition = positions[choosePos];
 
