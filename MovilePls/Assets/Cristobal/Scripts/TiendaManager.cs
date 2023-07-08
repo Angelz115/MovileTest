@@ -11,9 +11,9 @@ public class TiendaManager : MonoBehaviour
 
     void Start()
     {
-        if (PlayerPrefs.HasKey("monedasTotales"))
+        if (!PlayerPrefs.HasKey("monedasTotales"))
         {
-            PlayerPrefs.SetInt("monedasTotales", 500);
+            PlayerPrefs.SetInt("monedasTotales", 1000);
         }
 
         var plantillaItem = plantillaObjetoTienda.GetComponent<PlantillaItemTienda>();
