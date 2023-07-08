@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 133e0e00a22d4b840a9be8e951462f14, type: 3}
   m_Name: Escudo
   m_EditorClassIdentifier: 
-  titulo: 
-  imagen: {fileID: 0}
-  precio: 0
+  titulo: Escudo
+  imagen: {fileID: 21300000, guid: e1de81ce521e71946a1178751c7f5e0c, type: 3}
+  precio: 100

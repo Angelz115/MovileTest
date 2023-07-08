@@ -121,7 +121,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4311386168884142579}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -6641837837494499682}
+        m_TargetAssemblyTypeName: PlantillaItemTienda, Assembly-CSharp
+        m_MethodName: Comprar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6219654903550922698
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,8 +357,9 @@ GameObject:
   - component: {fileID: 7469813367716677277}
   - component: {fileID: 7469813367716677275}
   - component: {fileID: 7469813367716677274}
+  - component: {fileID: -6641837837494499682}
   m_Layer: 5
-  m_Name: PlantillaImagen
+  m_Name: PlantillaItemTienda
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -414,6 +427,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-6641837837494499682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7469813367716677276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd5a623cc14ed14f94f8d67dc9a5e72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imagen: {fileID: 7469813366579710056}
+  textoPrecio: {fileID: 7654461872735636400}
+  titulo: {fileID: 7469813368027922715}
+  botonComprar: {fileID: 6595852999933662405}
 --- !u!1 &7469813368027922717
 GameObject:
   m_ObjectHideFlags: 0
