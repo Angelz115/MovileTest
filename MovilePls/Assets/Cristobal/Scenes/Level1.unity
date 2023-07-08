@@ -372,7 +372,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1397498761}
         m_TargetAssemblyTypeName: Pause, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
@@ -710,7 +710,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1397498761}
         m_TargetAssemblyTypeName: Pause, Assembly-CSharp
         m_MethodName: mainMenu
         m_Mode: 1
@@ -1079,6 +1079,17 @@ RectTransform:
   m_AnchoredPosition: {x: -0.7825012, y: -38.80609}
   m_SizeDelta: {x: -38.9177, y: -120.9026}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &643676872 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2161959810675708852, guid: 3a68fdab001e5604e821ff8171104c30, type: 3}
+  m_PrefabInstance: {fileID: 2047374303}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &710428646
 GameObject:
   m_ObjectHideFlags: 0
@@ -1339,7 +1350,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1397498761}
         m_TargetAssemblyTypeName: Pause, Assembly-CSharp
         m_MethodName: mainMenu
         m_Mode: 1
@@ -2791,6 +2802,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1300389945}
   m_CullTransparentMesh: 1
+--- !u!1 &1349220499 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2161959809986222737, guid: 3a68fdab001e5604e821ff8171104c30, type: 3}
+  m_PrefabInstance: {fileID: 2047374303}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1358516670
 GameObject:
   m_ObjectHideFlags: 0
@@ -2976,15 +2992,15 @@ MonoBehaviour:
   pause: {fileID: 1397498761}
   spawner: {fileID: 1952404603}
   gameEnded: 0
-  popUp: {fileID: 0}
-  finishText: {fileID: 0}
+  popUp: {fileID: 1900794429}
+  finishText: {fileID: 1300389947}
   Values:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  displayText: {fileID: 0}
+  - {fileID: 1141232724}
+  - {fileID: 134647404}
+  - {fileID: 710428648}
+  - {fileID: 1231360396}
+  - {fileID: 997123134}
+  displayText: {fileID: 643676872}
   timer: 0
   toShow: 2.3
   finalScore: 0
@@ -3052,9 +3068,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2edcbee96fdb4ac44a863ee437221844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenuUI: {fileID: 0}
+  pauseMenuUI: {fileID: 244922430}
   manager: {fileID: 1389500735}
-  textInScreen: {fileID: 0}
+  textInScreen: {fileID: 1349220499}
   showText: 0
 --- !u!1 &1410482188
 GameObject:
@@ -3170,9 +3186,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1397498761}
         m_TargetAssemblyTypeName: Pause, Assembly-CSharp
-        m_MethodName: Restart
+        m_MethodName: RestartLvl1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3690,9 +3706,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Pause, Assembly-CSharp
-        m_MethodName: toLevel2
+      - m_Target: {fileID: 1397498759}
+        m_TargetAssemblyTypeName: Scene_Change, Assembly-CSharp
+        m_MethodName: lvl2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3823,7 +3839,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1397498761}
         m_TargetAssemblyTypeName: Pause, Assembly-CSharp
         m_MethodName: RestartLvl1
         m_Mode: 1
@@ -4173,7 +4189,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1397498761}
         m_TargetAssemblyTypeName: Pause, Assembly-CSharp
         m_MethodName: Paused
         m_Mode: 1
