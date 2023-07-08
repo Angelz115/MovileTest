@@ -11,7 +11,7 @@ public class PlantillaItemTienda : MonoBehaviour
     public TextMeshProUGUI titulo;
     public Button botonComprar;
     int precio;
-    int monedasTotales;
+    public int monedasTotales;
 
     void Start()
     {

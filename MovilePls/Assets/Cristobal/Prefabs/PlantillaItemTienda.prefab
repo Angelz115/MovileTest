@@ -443,6 +443,7 @@ MonoBehaviour:
   textoPrecio: {fileID: 7654461872735636400}
   titulo: {fileID: 7469813368027922715}
   botonComprar: {fileID: 6595852999933662405}
+  monedasTotales: 100
 --- !u!1 &7469813368027922717
 GameObject:
   m_ObjectHideFlags: 0
