@@ -1804,3 +1804,15 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 139.239958 seconds.
+  path: Assets/Cristobal/Scenes/Tienda.unity
+  artifactKey: Guid(4705b60873b0e284185ba0ad388731b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cristobal/Scenes/Tienda.unity using Guid(4705b60873b0e284185ba0ad388731b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63d8368ddb095ff57dc0dd6a99a9f1c6') in 0.011398 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.970829 seconds.
+  path: Assets/Cristobal/Scenes/Level1.unity
+  artifactKey: Guid(d0b20b5559b857543be828cf684eeaf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cristobal/Scenes/Level1.unity using Guid(d0b20b5559b857543be828cf684eeaf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a263f6ad049412b3388737f08480c7df') in 0.008302 seconds 
