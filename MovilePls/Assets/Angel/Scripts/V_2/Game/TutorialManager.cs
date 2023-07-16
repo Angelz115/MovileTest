@@ -2,12 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager2 : MonoBehaviour
+public class TutorialManager : MonoBehaviour
 {
-    public static GameManager2 Instance { get; private set; }
-    [Header("Scripts")]
-    
-    public GameObject textInScreen;
+    public static TutorialManager  Instance { get; private set; }
 
     private void Awake()
     {
@@ -21,6 +18,9 @@ public class GameManager2 : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
 
+    public void positionTutorial() 
+    { 
+        
+    }
 }

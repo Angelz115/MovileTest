@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -943003676550109966}
   m_Layer: 0
   m_Name: Asteroid V2 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,7 +120,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3749a51bb929b1a4ca94901ab56747fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {x: 0, y: 0}
   rb: {fileID: 2956636279123374782}
   force: 0
   speedModifier: 1.25

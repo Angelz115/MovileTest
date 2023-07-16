@@ -11,7 +11,7 @@ public class Timer : MonoBehaviour
     [Space]
     [Header("Flota Vals")]
     public float timer;
-    public float normalTime, buyTime, showerTime;
+    public float normalTime, buyTime, showerTime, warningTime;
 
     public TextMeshProUGUI timeToShow;
     // Start is called before the first frame update
@@ -33,7 +33,7 @@ public class Timer : MonoBehaviour
             switch (currentState)
             {
                 case GameState.Normal:
-                    changeState(GameState.MeteorShower);
+                    changeState(GameState.Warning);
                     timer = showerTime;
                     break;
                 case GameState.MeteorShower:
@@ -44,7 +44,9 @@ public class Timer : MonoBehaviour
                     changeState(GameState.Normal);
                     timer = normalTime;
                     break;
-                default:
+                case GameState.Warning:
+                    changeState(GameState.MeteorShower);
+                    timer = warningTime;
                     break;
             }
         }

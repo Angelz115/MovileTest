@@ -6,7 +6,8 @@ public class EndlessManager : MonoBehaviour
 {
     public static EndlessManager Instance { get; private set; }
     [Header("Scripts")]
-    public EndlessSpawner endless;
+    public EndlessSpawner endlessSpawner;
+    public PlayerSkills playerSkills;
     private void Awake()
     {
         if (Instance == null)
@@ -19,12 +20,16 @@ public class EndlessManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    public void proyectile() 
+    {
+        playerSkills.shootProyectile();
+    }
     public void changeState(GameState state)
     {
-        endless.gameState = state;
-        float redux = endless.maxTime;
+        endlessSpawner.gameState = state;
+        float redux = endlessSpawner.maxTime;
         redux = redux - redux / 3;
-        endless.maxTime = redux;
+        endlessSpawner.maxTime = redux;
     }
 
 }

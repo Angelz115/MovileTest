@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class BehaviorV2 : MonoBehaviour
 {
-    
+    [Header("Predefined Values")]
     public Rigidbody2D rb;
     public float force;
     public float speedModifier = 1;
+
+    [Space]
+    [Header("Instanciated VAlues")]
     public GameObject player;
+    public Entity Entity;
     //public float maxtimer, timer;
     // Start is called before the first frame update
     void Start()

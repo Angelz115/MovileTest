@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public enum GameState {Normal,MeteorShower, Buy}
+public enum GameState {Normal,MeteorShower,Warning, Buy}
 public class EndlessSpawner : MonoBehaviour
 {
     [Header("Predefined Elements")]
+
     public GameState gameState;
     public List<GameObject> asteroids = new List<GameObject>();
     public List<GameObject> points = new List<GameObject>();
@@ -15,18 +16,14 @@ public class EndlessSpawner : MonoBehaviour
     public float force;
 
     [Space]
-    [Header("Predefined Elements")]
-
-    public GameObject currentEntity;
-    private Vector2 playerPosition = new Vector2(0,0);
-
-    [Space]
     [Header("Element identity ")]
 
+    public GameObject currentEntity;
     public int entity;
+    public int lastEnity;
     public int maxRepetition;
-    public int pointRepetition;
-    public int asteroidRepetition;
+    public int repeatedEntity;
+    
 
     [Space]
     [Header("Index of the list ")]
@@ -41,7 +38,6 @@ public class EndlessSpawner : MonoBehaviour
     public Vector3 currentPosition;
     public int lastPos;
     public int choosePos;
-    private Vector2 target;
     public float xAlter, yAlter;
 
     [Space]
@@ -62,6 +58,7 @@ public class EndlessSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         timer += Time.deltaTime;
         if (timer >= maxTime)
         {
@@ -72,7 +69,10 @@ public class EndlessSpawner : MonoBehaviour
     }
     void createObject() 
     {
-
+        if (gameState == GameState.Buy || gameState == GameState.Warning)
+        {
+            return;
+        }
         manageValues();
         switch (gameState)
         {
@@ -81,21 +81,21 @@ public class EndlessSpawner : MonoBehaviour
                 if (entity == 0)
                 {
                     currentEntity = Instantiate(points[currentValue], currentPosition, transform.rotation);
+                    currentEntity.GetComponent<BehaviorV2>().Entity = Entity.Point;
                 }
                 else
                 {
                     currentEntity = Instantiate(asteroids[currentValue], currentPosition, transform.rotation);
+                    currentEntity.GetComponent<BehaviorV2>().Entity = Entity.Asteroid;
                 }
                 break;
 
             case GameState.MeteorShower:
 
                 currentEntity = Instantiate(asteroids[currentValue], currentPosition, transform.rotation);
+                currentEntity.GetComponent<BehaviorV2>().Entity = Entity.Asteroid;
 
                 break;
-
-            case GameState.Buy:
-                return;
                 
             
         }
@@ -109,25 +109,23 @@ public class EndlessSpawner : MonoBehaviour
     {
         //Asignar el valor de la entidad, si es 1 es un asteroide, si es 0 es un punto.
         entity = Random.Range(0,2);
-        switch (entity)
+        if (entity == lastEnity)
         {
-            case 1:
-
-                asteroidRepetition++;
-
-                if (asteroidRepetition >= maxRepetition)
-                    entity = 0;
-                
-                break;
-            case 0:
-
-                pointRepetition++;
-
-                if (pointRepetition >= maxRepetition)
+            repeatedEntity++;
+            if (repeatedEntity >= maxRepetition)
+            {
+                if (entity == 0)
                     entity = 1;
+                
+                else
+                    entity = 0;
 
-                break;
+                repeatedEntity = 0;
+            }
         }
+        
+        lastEnity = entity;
+        
 
         //Asignar al elemento el indice en la lista
         currentValue = randomListVal();
