@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public enum Entity { Point, Element }
+public enum Entity { Point, Asteroid }
 public class StructElemnt : MonoBehaviour
 {
     [System.Serializable]
@@ -9,7 +9,6 @@ public class StructElemnt : MonoBehaviour
     {
         public Entity entity;
         public Vector2 position;
-        public Vector2 target;
         public int value;
 
     }

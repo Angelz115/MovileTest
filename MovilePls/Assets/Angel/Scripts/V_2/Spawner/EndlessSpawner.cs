@@ -2,37 +2,61 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public enum GameState {Normal,MeteorShower, Buy}
 public class EndlessSpawner : MonoBehaviour
 {
-    public List<GameObject> Asteroids = new List<GameObject>();
-    public List<GameObject> Points = new List<GameObject>();
+    [Header("Predefined Elements")]
+    public GameState gameState;
+    public List<GameObject> asteroids = new List<GameObject>();
+    public List<GameObject> points = new List<GameObject>();
     public List<Transform> positions = new List<Transform>();
-    public GameObject baseEntity;
-    public GameObject currentEntity;
-    public Vector2 playerPosition;
+    public GameObject player;
+    public float force;
 
-    
-    public Transform thisPosition;
-    public Vector2 target;
-    public int thisValue;
+    [Space]
+    [Header("Predefined Elements")]
+
+    public GameObject currentEntity;
+    private Vector2 playerPosition = new Vector2(0,0);
+
+    [Space]
+    [Header("Element identity ")]
 
     public int entity;
+    public int maxRepetition;
     public int pointRepetition;
     public int asteroidRepetition;
-    public int maxRepetition;
 
+    [Space]
+    [Header("Index of the list ")]
+
+    public int currentValue;
     public int lastValue;
     public int valueCount;
 
+    [Space]
+    [Header("Element Position")]
+
+    public Vector3 currentPosition;
     public int lastPos;
     public int choosePos;
+    private Vector2 target;
+    public float xAlter, yAlter;
+
+    [Space]
+    [Header("Timer ")]
 
     public float timer;
     public float maxTime;
+   
+    private Transform currentPosition2;
+    
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameState = GameState.Normal;
     }
 
     // Update is called once per frame
@@ -44,76 +68,106 @@ public class EndlessSpawner : MonoBehaviour
             createObject();
             timer = 0;
         }
+
     }
-    
     void createObject() 
     {
+
         manageValues();
-        if (entity == 0)
+        switch (gameState)
         {
-            currentEntity = Instantiate(Points[thisValue], thisPosition.position, transform.rotation);
+            case GameState.Normal:
+
+                if (entity == 0)
+                {
+                    currentEntity = Instantiate(points[currentValue], currentPosition, transform.rotation);
+                }
+                else
+                {
+                    currentEntity = Instantiate(asteroids[currentValue], currentPosition, transform.rotation);
+                }
+                break;
+
+            case GameState.MeteorShower:
+
+                currentEntity = Instantiate(asteroids[currentValue], currentPosition, transform.rotation);
+
+                break;
+
+            case GameState.Buy:
+                return;
+                
+            
         }
-        else
-        {
-            currentEntity = Instantiate(Asteroids[thisValue], thisPosition.position, transform.rotation);
-        }
-        //currentEntity
         
+        currentEntity.GetComponent<BehaviorV2>().player = player;
+        currentEntity.GetComponent<BehaviorV2>().force = force;
+
+
     }
-
-    public void manageValues()
+    void manageValues() 
     {
-        //asignar al elemento su entidad 
-
-        entity = Random.Range(0, 2);
-        if (entity == 0)
+        //Asignar el valor de la entidad, si es 1 es un asteroide, si es 0 es un punto.
+        entity = Random.Range(0,2);
+        switch (entity)
         {
-            
-            pointRepetition++;
+            case 1:
 
-            if (pointRepetition == maxRepetition)
-            {
-                entity = 1;
-                pointRepetition = 0;
+                asteroidRepetition++;
 
-            }
-        }
-        else if (entity == 1)
-        {
-            
-            asteroidRepetition++;
+                if (asteroidRepetition >= maxRepetition)
+                    entity = 0;
+                
+                break;
+            case 0:
 
-            if (asteroidRepetition == maxRepetition)
-            {
-                entity = 0;
-                asteroidRepetition = 0;
+                pointRepetition++;
 
-            }
+                if (pointRepetition >= maxRepetition)
+                    entity = 1;
+
+                break;
         }
 
-        //asignar al elemento su valor
-
-        thisValue = Random.Range(0, 4);
-        if (lastValue == thisValue)
+        //Asignar al elemento el indice en la lista
+        currentValue = randomListVal();
+        if (lastValue == currentValue)
         {
             valueCount++;
             if (valueCount >= 3)
-                thisValue = Random.Range(0, 4);
+            {
+                currentValue = randomListVal();
+            }
         }
-        else
-            valueCount = 0;
+        lastValue = currentValue;
 
-        lastValue = thisValue;
-
-        //asignar al elemento su posicion
-        choosePos = Random.Range(0, 4);
-
+        //Asignar al elemento la posicion en la que se creara
+        choosePos = randomListVal();
         if (lastPos == choosePos)
         {
-            choosePos = Random.Range(0, 4);
+            choosePos = randomListVal();
         }
-        thisPosition = positions[choosePos];
+        if (choosePos %2 == 0)
+        {
+            float xAlt = Random.Range(-xAlter,xAlter+0.01f);
+            currentPosition = new Vector3(positions[choosePos].position.x + xAlt,positions[choosePos].position.y,0);
+            
+        }
+        else
+        {
+            float yAlt = Random.Range(-yAlter, yAlter + 0.01f);
+            currentPosition = new Vector3(positions[choosePos].position.x, positions[choosePos].position.y + yAlt, 0);
+        }
+        lastPos = choosePos;
+        
 
-        target = playerPosition;
+
+        int randomListVal() 
+        {
+            int val = Random.Range(0, 4);
+            return val;
+        }
     }
+
+   
 }
