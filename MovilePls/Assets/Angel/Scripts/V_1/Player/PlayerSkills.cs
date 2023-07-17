@@ -5,17 +5,23 @@ using TMPro;
 
 public class PlayerSkills : MonoBehaviour
 {
-    public GameObject Handle;
-    public GameObject ProyectileGM;
+    [Header("Game Objects")]
+
+    public GameObject ProyectileGO;
+    public GameObject skShield;
+    public GameObject thisSkShield;
+
+    [Space]
+    [Header("Predened Values")]
+
     public Transform origin;
-    public GameObject Shield;
     public int proyectileCount;
     public int skillShieldCount;
     public TextMeshProUGUI ProyCountUI;
     public TextMeshProUGUI skShieldCountUI;
 
-    public GameObject skShield;
-    public GameObject thisSkShield;
+    [Space]
+    [Header("Shield_SK values")]
 
     public float timer;
     public float MaxShield;
@@ -40,16 +46,16 @@ public class PlayerSkills : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Proyectile();
+            shootProyectile();
         }
         
     }
-    public void Proyectile() 
+    public void shootProyectile() 
     {
         if (proyectileCount <=0)
             return;
 
-        Instantiate(ProyectileGM, origin.position, transform.rotation);
+        Instantiate(ProyectileGO, origin.position, transform.rotation);
         proyectileCount--;
         ProyCountUI.text = proyectileCount.ToString();
     }

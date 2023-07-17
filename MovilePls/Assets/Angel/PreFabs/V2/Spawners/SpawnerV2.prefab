@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4719616713391131799
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4719616713391131816}
+  - component: {fileID: 4719616713391131817}
+  m_Layer: 0
+  m_Name: SpawnerV2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4719616713391131816
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4719616713391131799}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4719616713391131817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4719616713391131799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac9bd7780b233f64893ce3479b1ee413, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Asteroids:
+  - {fileID: 3949949428334430861, guid: ba96bedb5dfa58f42bb0303770aecd93, type: 3}
+  - {fileID: 3949949428334430861, guid: 90fdccf4e67da584eab9fa98e03a7f73, type: 3}
+  - {fileID: 3949949428334430861, guid: 0410a450a724132419ba535cbde93c44, type: 3}
+  - {fileID: 3949949428334430861, guid: 5491aa5ccce2e5a47bd4dae11e45a412, type: 3}
+  Points:
+  - {fileID: 3245501789379839971, guid: 934a4a34f3c9f7b418438ab86eca2f86, type: 3}
+  - {fileID: 3245501789379839971, guid: 0ab87e38db484f34686e513684c22121, type: 3}
+  - {fileID: 3245501789379839971, guid: 621b8f28910bce243b6a2bb6c98100e4, type: 3}
+  - {fileID: 3245501789379839971, guid: 6dabaf7d3c57a1545b73a851f5bee20c, type: 3}
+  Elements: []
+  player: {fileID: 0}
+  force: 10
+  currentEntity: {fileID: 0}
+  travelList: 0
+  thisEntity: 0
+  thisPosition: {x: 0, y: 0}
+  thisValue: 0
+  timer: 0
+  maxTimer: 2
+  listLength: 0
+  xAlter: 6.5
+  yAlter: 2.5
+  xpos: {x: 9.5, y: 0}
+  ypos: {x: 0, y: 5.5}
