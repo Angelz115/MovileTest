@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.22496533, g: 0.121688776, b: 0.29109234, a: 1}
+  m_IndirectSpecularColor: {r: 0.22496483, g: 0.12168931, b: 0.29109243, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -259,9 +259,9 @@ MonoBehaviour:
   change: 0
   currentState: 0
   timer: 0
-  normalTime: 91
-  buyTime: 21
-  showerTime: 36
+  normalTime: 5
+  buyTime: 5
+  showerTime: 3
   warningTime: 6
   timeToShow: {fileID: 190295112}
 --- !u!114 &190295112
@@ -537,6 +537,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30033db133b1a0740b5e439d299e40f4, type: 3}
+--- !u!114 &298298204 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3477790452291969313, guid: a849347d27dba2a4ca79ea483dd63b80, type: 3}
+  m_PrefabInstance: {fileID: 385547619}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e108afec6801fd243b940b151f6d331e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &303925954
 GameObject:
   m_ObjectHideFlags: 0
@@ -1236,6 +1247,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2161959810675708852, guid: 3a68fdab001e5604e821ff8171104c30, type: 3}
+      propertyPath: m_text
+      value: "\xA1\xA1ADVERTENCIA!!  LLUVIA DE METEORITOS EN CAMINO"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2161959810675708852, guid: 3a68fdab001e5604e821ff8171104c30, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2161959810675708852, guid: 3a68fdab001e5604e821ff8171104c30, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2161959810675708852, guid: 3a68fdab001e5604e821ff8171104c30, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.5754717
+      objectReference: {fileID: 0}
+    - target: {fileID: 2161959810675708852, guid: 3a68fdab001e5604e821ff8171104c30, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190227
+      objectReference: {fileID: 0}
+    - target: {fileID: 2161959810675708852, guid: 3a68fdab001e5604e821ff8171104c30, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 2161959810675708852, guid: 3a68fdab001e5604e821ff8171104c30, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a68fdab001e5604e821ff8171104c30, type: 3}
 --- !u!224 &720551958 stripped
@@ -1473,7 +1512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 312d2758eec44784caf60f25feb2da2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endlessSpawner: {fileID: 0}
+  endlessSpawner: {fileID: 298298204}
   playerSkills: {fileID: 0}
 --- !u!4 &1288337961
 Transform:
@@ -1497,6 +1536,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1558296827}
     m_Modifications:
+    - target: {fileID: 2929252283123773937, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 350b135397245e24a813a50b7896b006, type: 3}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1593,6 +1636,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 115
       objectReference: {fileID: 0}
+    - target: {fileID: 2929252285020698103, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cda6bf72c006c974ab6e4b79fd4a9c90, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
 --- !u!1 &1491419615
