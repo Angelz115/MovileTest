@@ -36,18 +36,17 @@ public class Timer : MonoBehaviour
                     changeState(GameState.Warning);
                     timer = showerTime;
                     break;
-                case GameState.MeteorShower:
-                    changeState(GameState.Buy);
-                    timer = buyTime;
-                    break;
-                case GameState.Buy:
-                    changeState(GameState.Normal);
-                    timer = normalTime;
-                    break;
+
                 case GameState.Warning:
                     changeState(GameState.MeteorShower);
                     timer = warningTime;
                     break;
+
+                case GameState.MeteorShower:
+                    changeState(GameState.Normal);
+                    timer = buyTime;
+                    break;
+
             }
         }
     }

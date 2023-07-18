@@ -43,6 +43,7 @@ public class SpawnerV2 : MonoBehaviour
     {
         if (listLength <= travelList)
         {
+            GameManager2.Instance.currentState = playState.Ended;
             return;
         }
         timer += Time.deltaTime;
@@ -71,6 +72,7 @@ public class SpawnerV2 : MonoBehaviour
         currentEntity.GetComponent<BehaviorV2>().player = player;
         currentEntity.GetComponent<BehaviorV2>().force = force;
         currentEntity.GetComponent<BehaviorV2>().Entity = thisEntity;
+        currentEntity.GetComponent<BehaviorV2>().value = thisValue;
         currentEntity.GetComponent<BehaviorV2>().asteroidParticles = asteroidParticles;
         travelList++;
     }

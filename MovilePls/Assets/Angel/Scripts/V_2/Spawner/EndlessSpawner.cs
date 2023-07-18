@@ -69,7 +69,7 @@ public class EndlessSpawner : MonoBehaviour
     }
     void createObject() 
     {
-        if (gameState == GameState.Buy || gameState == GameState.Warning)
+        if (gameState == GameState.Warning)
         {
             return;
         }

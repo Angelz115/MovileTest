@@ -9,8 +9,8 @@ public class PlayerLife2 : MonoBehaviour
 
     private void Start()
     {
-        if (lives >= maxLives)
-            lives = maxLives;
+        lives = maxLives;
+        GameManager2.Instance.livesCountUI.text = lives.ToString();
         
     }
 
@@ -19,5 +19,9 @@ public class PlayerLife2 : MonoBehaviour
         lives--;
         return lives;
 
+    }
+    public int getLivesP() 
+    {
+        return lives;
     }
 }
