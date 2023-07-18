@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   titulo: Proyectil
   imagen: {fileID: 21300000, guid: b7bdc6150a0b5534f92302cf251febbe, type: 3}
-  precio: 50
+  precio: 4
