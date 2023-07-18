@@ -8,6 +8,7 @@ TagManager:
   - Point
   - Proyectile
   - ShieldSK
+  - Shield
   layers:
   - Default
   - TransparentFX

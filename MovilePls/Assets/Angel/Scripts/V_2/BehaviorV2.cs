@@ -8,11 +8,12 @@ public class BehaviorV2 : MonoBehaviour
     public Rigidbody2D rb;
     public float force;
     public float speedModifier = 1;
-
+    public GameObject asteroidParticles; 
     [Space]
     [Header("Instanciated VAlues")]
     public GameObject player;
     public Entity Entity;
+    public int value;
     //public float maxtimer, timer;
     // Start is called before the first frame update
     void Start()
@@ -23,17 +24,29 @@ public class BehaviorV2 : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        
+        if (Entity == Entity.Asteroid)
+        {
+            if (collision.gameObject.CompareTag("Proyectile"))
+            {
+                GameManager2.Instance.addPoints(value);
+                
+            }
+            GameManager2.Instance.subtractLives();
+            //Instantiate(asteroidParticles, transform.position, transform.rotation);
+        }
+        else
+            GameManager2.Instance.addPoints(value);
+        
         Destroy(gameObject);
     }
-    /*
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        timer += Time.deltaTime;
-        if (timer >= maxtimer)
+        if (Entity == Entity.Asteroid)
         {
-            Destroy(gameObject);
+            Instantiate(asteroidParticles,transform.position,transform.rotation);
         }
+        Destroy(gameObject);
     }
-    */
+    
 }

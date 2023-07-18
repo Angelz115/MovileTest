@@ -6,12 +6,12 @@ public class Proyectile : MonoBehaviour
 {
     public Rigidbody2D rb;
     public float force;
-    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
         rb.AddForce(transform.up * force);
-        player = GameObject.Find("Player");
+        //rb.AddForce(Vector2.up * force);
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

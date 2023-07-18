@@ -11,6 +11,7 @@ public class SpawnerV2 : MonoBehaviour
     public List<StructElemnt.StructElementI> Elements = new List<StructElemnt.StructElementI>();
     public GameObject player;
     public float force;
+    public GameObject asteroidParticles;
     [Space]
     [Header("Entity")]
     public GameObject currentEntity;
@@ -69,6 +70,8 @@ public class SpawnerV2 : MonoBehaviour
         }
         currentEntity.GetComponent<BehaviorV2>().player = player;
         currentEntity.GetComponent<BehaviorV2>().force = force;
+        currentEntity.GetComponent<BehaviorV2>().Entity = thisEntity;
+        currentEntity.GetComponent<BehaviorV2>().asteroidParticles = asteroidParticles;
         travelList++;
     }
     

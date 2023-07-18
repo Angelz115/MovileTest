@@ -14,7 +14,7 @@ public class EndlessSpawner : MonoBehaviour
     public List<Transform> positions = new List<Transform>();
     public GameObject player;
     public float force;
-
+    public GameObject asteroidParticles;
     [Space]
     [Header("Element identity ")]
 
@@ -102,7 +102,8 @@ public class EndlessSpawner : MonoBehaviour
         
         currentEntity.GetComponent<BehaviorV2>().player = player;
         currentEntity.GetComponent<BehaviorV2>().force = force;
-
+        currentEntity.GetComponent<BehaviorV2>().value = currentValue;
+        currentEntity.GetComponent<BehaviorV2>().asteroidParticles = asteroidParticles;
 
     }
     void manageValues() 
