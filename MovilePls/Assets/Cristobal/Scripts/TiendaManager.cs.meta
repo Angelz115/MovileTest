@@ -3,7 +3,9 @@ guid: c7e332befff582a499e43cd36ed06d10
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - plantillaObjetoTienda: {instanceID: 0}
+  - textoMonedasTotales: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -8,12 +8,14 @@ public class TiendaManager : MonoBehaviour
     [SerializeField] List<PlantillaInfoItem> informacionItems;
     [SerializeField] GameObject plantillaObjetoTienda;
     [SerializeField] TextMeshProUGUI textoMonedasTotales;
+    
 
     void Start()
     {
         if (!PlayerPrefs.HasKey("monedasTotales"))
         {
             PlayerPrefs.SetInt("monedasTotales", 1000);
+            
         }
 
         var plantillaItem = plantillaObjetoTienda.GetComponent<PlantillaItemTienda>();
@@ -23,7 +25,6 @@ public class TiendaManager : MonoBehaviour
             plantillaItem.imagen.sprite = item.imagen;
             plantillaItem.titulo.text = item.titulo;
             plantillaItem.textoPrecio.text = item.precio.ToString();
-
             Instantiate(plantillaItem, transform); 
         }
     }
