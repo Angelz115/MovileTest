@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public enum GameState {Normal,MeteorShower,Warning, Buy}
+public enum GameState {Normal,MeteorShower,Warning}
 public class EndlessSpawner : MonoBehaviour
 {
     [Header("Predefined Elements")]
@@ -53,12 +53,16 @@ public class EndlessSpawner : MonoBehaviour
     void Start()
     {
         gameState = GameState.Normal;
+        GameManager2.Instance.type = gameType.Endlees;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (GameManager2.Instance.currentState != playState.Playing)
+        {
+            return;
+        }
         timer += Time.deltaTime;
         if (timer >= maxTime)
         {

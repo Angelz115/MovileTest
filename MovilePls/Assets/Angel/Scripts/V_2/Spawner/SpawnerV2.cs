@@ -31,19 +31,74 @@ public class SpawnerV2 : MonoBehaviour
     public float yAlter;
     public Vector2 xpos;
     public Vector2 ypos;
+    public int allPoints;
+    public float cullDown;
 
     // Start is called before the first frame update
     void Start()
     {
         listLength = Elements.Count;
+        GameManager2.Instance.type = gameType.Normal;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (GameManager2.Instance.currentState == playState.Victory)
+        {
+            /*
+            timer += Time.deltaTime;
+            if (timer >= 2.2f)
+            {
+                GameManager2.Instance.Victory();
+            }
+            */
+            return;
+        }
+        if (GameManager2.Instance.currentState != playState.Playing)
+        {
+            return;
+        }
+        if (travelList == 0)
+        {
+            GameManager2.Instance.text("Los proximos 4 objetos son puntos, debes agarrarlos");
+        }
+        if (travelList == 2)
+        {
+            GameManager2.Instance.turnDownText();
+        }
+        if (travelList == 5)
+        {
+            GameManager2.Instance.text("Los proximos 4 objetos son asteroides, evita que te toquen");
+            GameManager2.Instance.activateShield();
+        }
+        if (travelList ==7)
+        {
+            GameManager2.Instance.turnDownText();
+        }
+        if (travelList == 9)
+        {
+            GameManager2.Instance.text("Usa los proyectiles para destruir a los Asteroides");
+            GameManager2.Instance.activateProyectiles();
+        }
+        if (travelList == 11)
+        {
+            GameManager2.Instance.turnDownText();
+        }
+        if (travelList == 13)
+        {
+            GameManager2.Instance.text("Puedes usar el escudo para defenderte de los asteroides");
+            GameManager2.Instance.ativateshieldButton();
+        }
+
+        if (travelList == 15)
+        {
+            GameManager2.Instance.turnDownText();
+        }
+
         if (listLength <= travelList)
         {
-            GameManager2.Instance.currentState = playState.Ended;
+            Invoke(nameof(callVictory), cullDown);
             return;
         }
         timer += Time.deltaTime;
@@ -52,6 +107,10 @@ public class SpawnerV2 : MonoBehaviour
             createObject();
             timer = 0;
         }
+    }
+    public void callVictory() 
+    {
+        GameManager2.Instance.Victory();
     }
     public void createObject()
     {
@@ -63,6 +122,7 @@ public class SpawnerV2 : MonoBehaviour
         {
             case Entity.Point:
                 currentEntity = Instantiate(Points[thisValue],thisPosition,Quaternion.identity);
+                allPoints++;
                 break;
             case Entity.Asteroid:
                 currentEntity = Instantiate(Asteroids[thisValue], thisPosition, Quaternion.identity);
@@ -76,5 +136,8 @@ public class SpawnerV2 : MonoBehaviour
         currentEntity.GetComponent<BehaviorV2>().asteroidParticles = asteroidParticles;
         travelList++;
     }
-    
+    public int getAllPoints() 
+    {
+        return allPoints;
+    }
 }

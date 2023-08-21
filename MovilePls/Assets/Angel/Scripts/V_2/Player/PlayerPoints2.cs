@@ -19,6 +19,7 @@ public class PlayerPoints2 : MonoBehaviour
     }
     public void addComboP() 
     {
+        
         currentCombo++;
         if (currentCombo >= maxCombo)
             maxCombo = currentCombo;

@@ -32,13 +32,21 @@ public class Buttons2 : MonoBehaviour
     #endregion
 
     #region SCENES
+    public void toEndless() 
+    {
+        SceneManager.LoadScene("Endless");
+    }
+    public void toShoop() 
+    {
+        SceneManager.LoadScene("Tienda");
+    }
     public void toMainMenu() 
     {
         SceneManager.LoadScene("SelectorNivel");
     }
     public void toTutorial()
     {
-        //SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene("Tutorial");
     }
     public void toLevel_1() 
     {
@@ -70,7 +78,12 @@ public class Buttons2 : MonoBehaviour
     public void resetTutorial()
     {
         GameManager2.Instance.resume();
-        //SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene("Tutorial");
+    }
+    public void resetEndless() 
+    {
+        GameManager2.Instance.resume();
+        SceneManager.LoadScene("Endless");
     }
     #endregion
 

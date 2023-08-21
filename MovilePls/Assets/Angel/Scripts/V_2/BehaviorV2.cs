@@ -26,11 +26,15 @@ public class BehaviorV2 : MonoBehaviour
     //colision con el jugador
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        if (GameManager2.Instance.currentState == playState.Defeat)
+        {
+            Destroy(gameObject);
+            return;
+        }
         if (Entity == Entity.Asteroid)
         {
             if (collision.gameObject.CompareTag("Proyectile"))
-                GameManager2.Instance.addPoints(value);
+                GameManager2.Instance.addHitted();
             else
             {
                 GameManager2.Instance.subtractLives();
@@ -55,6 +59,11 @@ public class BehaviorV2 : MonoBehaviour
     //colision con los escudos
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (GameManager2.Instance.currentState == playState.Defeat)
+        {
+            Destroy(gameObject);
+            return;
+        }
         if (Entity == Entity.Asteroid)
         {
             GameObject particle = Instantiate(asteroidParticles, transform.position, transform.rotation);

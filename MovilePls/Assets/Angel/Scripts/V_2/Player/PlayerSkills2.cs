@@ -10,16 +10,27 @@ public class PlayerSkills2 : MonoBehaviour
     public GameObject shield;
     public int maxProyectileCount;
     public int maxShieldCount;
-
+    public int asteroidsHit;
     [Space]
     [Header("Values")]
     public int proyectileCount;
     public int shieldCount;
     public float timer, maxShieldTimer;
     public bool shieldActive;
-    
+    public bool tutorial;
     private void Start()
     {
+        if (tutorial)
+        {
+            shieldCount = 3;
+            proyectileCount = 6;
+
+        }
+        else
+        {
+            shieldCount = PlayerPrefs.GetInt("totalShields");
+            proyectileCount = PlayerPrefs.GetInt("totalProyectiles");
+        }
         GameManager2.Instance.proyectileCountUI.text = proyectileCount.ToString();
         GameManager2.Instance.shieldSKCountUI.text = shieldCount.ToString();
         shield.SetActive(false);
@@ -67,5 +78,17 @@ public class PlayerSkills2 : MonoBehaviour
         shieldActive = true;
         return shieldCount;
         
+    }
+    public int getProyectilesP() 
+    {
+        return proyectileCount;
+    }
+    public int getShieldSKP() 
+    {
+        return shieldCount;
+    }
+    public int getHittedP() 
+    {
+        return asteroidsHit; 
     }
 }

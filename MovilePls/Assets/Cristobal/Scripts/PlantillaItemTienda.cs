@@ -40,9 +40,11 @@ public class PlantillaItemTienda : MonoBehaviour
         int moneda_actual = PlayerPrefs.GetInt("monedasTotales");
         precio = int.Parse(textoPrecio.text);
 
-        if (precio >= moneda_actual)
+        if (precio > moneda_actual)
         {
             botonComprar.interactable = false;
+
+            return;
         }
 
         if (item == comprables.proyectil)

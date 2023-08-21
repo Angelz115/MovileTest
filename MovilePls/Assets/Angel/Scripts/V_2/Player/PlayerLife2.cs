@@ -13,7 +13,13 @@ public class PlayerLife2 : MonoBehaviour
         GameManager2.Instance.livesCountUI.text = lives.ToString();
         
     }
-
+    private void Update()
+    {
+        if (lives <= 0 && GameManager2.Instance.currentState != playState.Defeat)
+        {
+            GameManager2.Instance.gameOver();
+        }
+    }
     public int subtractLIves() 
     {
         lives--;
@@ -22,6 +28,10 @@ public class PlayerLife2 : MonoBehaviour
     }
     public int getLivesP() 
     {
+        if (lives <= 0)
+        {
+            lives = 0;
+        }
         return lives;
     }
 }

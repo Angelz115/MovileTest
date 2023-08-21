@@ -14,10 +14,12 @@ public class Timer : MonoBehaviour
     public float normalTime, buyTime, showerTime, warningTime;
 
     public TextMeshProUGUI timeToShow;
+    public GameObject textINScreen;
     // Start is called before the first frame update
     private void Start()
     {
         timer = normalTime;
+        textINScreen.SetActive(false);
     }
 
     // Update is called once per frame
@@ -33,28 +35,31 @@ public class Timer : MonoBehaviour
             switch (currentState)
             {
                 case GameState.Normal:
-                    changeState(GameState.Warning);
-                    timer = showerTime;
+                    changeState(GameState.Warning,playState.Other);
+                    timer = warningTime;
+                    textINScreen.SetActive(true);
                     break;
 
                 case GameState.Warning:
-                    changeState(GameState.MeteorShower);
-                    timer = warningTime;
+                    changeState(GameState.MeteorShower,playState.Playing);
+                    timer = showerTime;
+                    textINScreen.SetActive(false);
                     break;
 
                 case GameState.MeteorShower:
-                    changeState(GameState.Normal);
-                    timer = buyTime;
+                    changeState(GameState.Normal,playState.Playing);
+                    timer = normalTime;
                     break;
 
             }
         }
     }
     
-    void changeState(GameState state) 
+    void changeState(GameState state, playState playState) 
     {
         currentState = state;
-        EndlessManager.Instance.changeState(state);
+        GameManager2.Instance.changeState(state);
+        GameManager2.Instance.currentState = playState;
     }
     public void displayTime(float timeToDisplay) 
     {
