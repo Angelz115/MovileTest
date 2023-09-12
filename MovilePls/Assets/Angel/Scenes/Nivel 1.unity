@@ -320,6 +320,7 @@ MonoBehaviour:
   showerTime: 36
   warningTime: 6
   timeToShow: {fileID: 190295112}
+  textINScreen: {fileID: 0}
 --- !u!114 &190295112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2706,10 +2707,16 @@ MonoBehaviour:
   playerLife: {fileID: 878401454}
   playerPoints: {fileID: 878401453}
   currentState: 0
+  type: 0
+  tutorial: 0
   textInScreen: {fileID: 817161057}
+  tutorialText: {fileID: 0}
   blackScreen: {fileID: 2127568289}
   pauseMenu: {fileID: 2055380675}
   popUp: {fileID: 1606002776}
+  shield: {fileID: 8901198810809810163, guid: 9aaa3740a4ad13c4aba72e92e2881c6b, type: 3}
+  proyectileButton: {fileID: 1389625711}
+  shieldButton: {fileID: 756408188}
   proyectileCountUI: {fileID: 1902890633}
   shieldSKCountUI: {fileID: 434322246}
   livesCountUI: {fileID: 1700740925}
@@ -2720,6 +2727,7 @@ MonoBehaviour:
   proyectilePopUp: {fileID: 1773504604}
   comboPopUp: {fileID: 1744112586}
   ScorePopUp: {fileID: 1088704233}
+  changes: 0
 --- !u!1001 &1363219211
 PrefabInstance:
   m_ObjectHideFlags: 0
